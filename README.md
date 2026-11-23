@@ -1,59 +1,82 @@
-# Fiasorgbor George Etornam Kobla (Elroy) — Portfolio Website
+# Fiasorgbor George Etornam Kobla (Elroy) — Personal Portfolio Website
 
-> Professional personal portfolio website showcasing network engineering, cybersecurity research, and software development projects.
-
-## 🚀 Live Site
-- **Live URL:** [Coming soon on Vercel / GitHub Pages]
+> Modern, high-performance personal portfolio website showcasing Network Engineering, Cybersecurity Research, and Software Development. Built with Next.js (Static Export), TypeScript, and Tailwind CSS.
 
 ---
 
-## 👨‍💻 About Me
-- **Name:** Fiasorgbor George Etornam Kobla (Elroy)
-- **Headline:** Network Engineer | Cybersecurity Specialist | Software Developer
-- **Location:** Accra, Ghana
-- **Email:** [georgefias01@gmail.com](mailto:georgefias01@gmail.com)
+## 🌐 Live URL
+- **Production (Vercel):** [https://george-fiasorgbor.vercel.app](https://george-fiasorgbor.vercel.app) *(or your preferred Vercel domain upon linking)*
+- **GitHub Pages:** [https://georgefiasorgbor.github.io/portfolio-website/](https://georgefiasorgbor.github.io/portfolio-website/)
+- **Repository:** [https://github.com/Georgefiasorgbor/portfolio-website](https://github.com/Georgefiasorgbor/portfolio-website)
 
 ---
 
-## 🛠️ Tech Stack
-- **Framework:** [Next.js](https://nextjs.org/) (Static Export / App Router)
-- **Styling:** [Tailwind CSS](https://tailwindcss.com/)
-- **Icons:** [Lucide React](https://lucide.dev/)
-- **Typography & UI:** Modern Dark Mode / High Contrast Cybersecurity aesthetic
+## ⚡ Tech Stack & Architecture
+- **Framework:** Next.js 14 (App Router with `output: 'export'` for 100% static hosting)
+- **Styling:** Tailwind CSS with dark-mode first cybersecurity & terminal theme
+- **Icons:** Lucide React
+- **CV Download:** Static PDF embedded at `/public/cv.pdf`
+- **Data Layer:** Centralized in `src/data/content.ts` for instant zero-code content updates
+- **Deployment Ready:** Automated GitHub Actions Pages deployment + Vercel integration
 
 ---
 
-## 📦 Getting Started
+## 🚀 Quick Start (Local Development)
 
-### Prerequisites
-- Node.js (v18 or higher recommended)
-- npm or pnpm or yarn
-
-### Installation
 ```bash
-# Clone the repository
+# 1. Clone repository
 git clone https://github.com/Georgefiasorgbor/portfolio-website.git
 cd portfolio-website
 
-# Install dependencies
+# 2. Install dependencies
 npm install
 
-# Run development server
+# 3. Start local development server
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Visit [http://localhost:3000](http://localhost:3000) to view the live site.
+
+To test the optimized production build:
+```bash
+npm run build
+```
+The static export will be placed into the `out/` directory.
 
 ---
 
-## ✏️ Updating Portfolio Content
-All website content is centralized in `src/data/content.ts`. To update:
-- Experience, Education, or Skills
-- Projects or GitHub/Live URLs
-- Social links or Bio details
-Simply edit `src/data/content.ts` without modifying component markup.
+## ✏️ How to Update Website Content
+All personal info, experiences, research, skills, and projects are centralized in:
+📂 **`src/data/content.ts`**
+
+You do not need to modify any TSX components. Simply edit `src/data/content.ts`:
+- **Change Bio / Headline / Location:** Update `portfolioContent.personal`
+- **Add / Edit Experience:** Update `portfolioContent.experience` array
+- **Update Education & Research Focus:** Update `portfolioContent.education` array
+- **Add / Modify Skills:** Update `portfolioContent.skillCategories`
+- **Add New Projects:** Update `portfolioContent.projects` array (title, techStack, githubUrl, liveUrl)
+- **Update Contact Form Endpoint:** Set `formspreeEndpoint` with your Formspree ID or keep empty for automatic `mailto:` client fallback.
+- **Update CV:** Replace `public/cv.pdf` with your updated resume file.
 
 ---
 
-## 📄 License
-MIT License.
+## 🚢 Deployment Guide
+
+### Option 1: Vercel (Recommended — Free & 1 Minute Setup)
+1. Go to [vercel.com](https://vercel.com) and log in with your GitHub account.
+2. Click **"Add New Project"** -> **"Import"** next to `portfolio-website`.
+3. Keep the default settings (Framework Preset: **Next.js**).
+4. Click **"Deploy"**. Vercel will build and assign you a free `*.vercel.app` domain with automatic HTTPS and global edge CDN.
+5. Every time you push to `main`, Vercel automatically deploys updates.
+
+### Option 2: GitHub Pages (Free via Automated Workflow)
+1. In your GitHub repository: [github.com/Georgefiasorgbor/portfolio-website](https://github.com/Georgefiasorgbor/portfolio-website)
+2. Go to **Settings** -> **Pages**.
+3. Under **Build and deployment** > **Source**, choose **GitHub Actions**.
+4. The included `.github/workflows/deploy.yml` workflow will automatically trigger on every push to `main` and deploy the static site to:
+   `https://georgefiasorgbor.github.io/portfolio-website/`
+
+---
+
+## 🔒 Privacy Compliance
+In accordance with your privacy preferences, phone numbers and personal reference contact details are strictly excluded. Contact is channeled through your designated professional email (`georgefias01@gmail.com`) and professional social handles.
